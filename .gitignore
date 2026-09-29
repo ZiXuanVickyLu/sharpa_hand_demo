@@ -1,12 +1,35 @@
 # build trees and fetched dependencies
 build/
-# simulation outputs (the clips in output/demo are kept)
-output/output/
-output/test/
-# Python bytecode
+# per-user CMake / IDE / language-server files
+CMakeUserPresets.json
+compile_commands.json
+.cache/
+.vscode/
+.idea/
+.vs/
+*.user
+*.swp
+*~
+.DS_Store
+Thumbs.db
+# simulation outputs; only the demo clips are kept
+output/*
+!output/demo/
+*.bgeo
+stats.csv
+resolved_config.json
+ckpt_*.npy
+# the paper (not redistributable)
+knowledge/
+# Python
 __pycache__/
 *.pyc
-# viewer settings
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+# viewer settings and logs
 imgui.ini
 .polyscope.ini
+screenshot_*.png
 *.log

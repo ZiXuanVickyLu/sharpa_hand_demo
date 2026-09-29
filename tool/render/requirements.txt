@@ -10,3 +10,4 @@ scikit-image
 pyglet
 PyOpenGL
 trimesh
+matplotlib

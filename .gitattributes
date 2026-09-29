@@ -1,0 +1,13 @@
+* text=auto
+*.msh -text -diff
+*.mesh -text -diff
+*.obj -text -diff
+*.urdf text
+*.npy binary
+*.npz binary
+*.stl binary
+*.STL binary
+*.mp4 binary
+*.pdf binary
+ext/** linguist-vendored
+doc/** linguist-documentation

@@ -1,20 +1,23 @@
 # References
 
-The PDFs live in `knowledge/`, which is gitignored (PDFs do not delta-compress; committing them
-would add ~13 MB per paper to every clone permanently). This file records what they are.
+The paper is not part of the repository (arXiv's license does not cover redistribution); this file records
+the references.
 
-| File in `knowledge/` | Reference |
+| Paper | Reference |
 | --- | --- |
 | `Zheng et al. - 2025 - Robust and Efficient Penetration-Free Elastodynamics without Barriers.pdf` | J. Zheng, Z. Luo, M. Li. *Robust and Efficient Penetration-Free Elastodynamics without Barriers.* arXiv:2512.12151, Dec 2025. The method reproduced here ("AL-IPC" / barrier-free contact). |
 
-## Code references (local checkouts)
+## Code references
 
-| Path | What it is | Used for |
+| Reference | What it is | Used for |
 | --- | --- | --- |
-| `../libuipc` (remote `origin` = spiriMirror/libuipc, remote `al` = wiso-enoji/libuipc, branch `al/AL-release`) | Official AL-IPC integration contributed by Genesis AI (`src/backends/cuda/active_set_system`, `contact_system/al_*`, `engine/advance_al.cu`, `apps/AL_examples`) | Operational order of the outer loop, active-set merge/filter kernels, slack/λ update, friction snapshot; see math spec §16 for where we deviate |
-| `../coupled_solver` | In-house PD/ADMM + MPM coupling solver | CMake layout and presets, CUDA 13 CCCL handling, `typedef.cuh` real types, `libculbvh` stackless LBVH, ACCD + GTE distance queries, buffer pool pattern, PCG structure, bgeo I/O, scene JSON conventions |
-| `../culbvh` | Stand-alone LBVH repo (same code as `coupled_solver/src/libculbvh`) | Reference and benchmarks |
-| `../cwheels` | CPU solver wheels (IPC/PD solvers, ipc-toolkit vendored under `ext/ipc-toolkit`) | CPU oracles for distance gradients and elastic eigen-systems in tests |
+| https://github.com/spiriMirror/libuipc and the AL fork https://github.com/wiso-enoji/libuipc (branch `AL-release`) | Official AL-IPC integration contributed by Genesis AI | The [UIPC-AL] reference implementation the specs compare against; the animal-well assets |
+| a private in-house PD/ADMM + MPM coupling solver (not published) | Infrastructure reference | CMake layout and presets, CUDA 13 CCCL handling, real types, the LBVH and ACCD sources it carried |
+| https://github.com/ZiXuanVickyLu/culbvh | Stand-alone LBVH (Jerry Hsu's GPU LBVH) | `src/libculbvh` |
+| https://github.com/ZiXuanVickyLu/cuGTE | Geometric Tools distance queries on CUDA | `src/ccd/libcuGTE` |
+
+Paths of the form `../libuipc` or `../coupled_solver` in the specs refer to the author's local checkouts of these
+at the time of writing.
 
 ## Papers cited by the specs (not stored locally)
 

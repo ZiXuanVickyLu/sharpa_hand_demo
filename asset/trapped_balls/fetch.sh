@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Fetches the squishy-ball asset of Zheng, Luo & Li 2025 (Figures 1 and 21) from the authors'
-# supplementary repository. fluffy_ball.mesh is 33 MB and gitignored here.
+# supplementary repository (the files are included here, see NOTICE; this script re-fetches them).
 #   github.com/wiso-enoji/Barrier-Free-Supplementary  ->  assets.zip  ->  assets/fluffy_ball.mesh
 # The file is in MEDIT format in the authors' raw units (half-extent 17.95); the configs apply
 # the paper's scale (0.03 for Fig. 1, 0.027 for Fig. 21) themselves. Apply it exactly once.

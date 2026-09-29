@@ -1,22 +1,7 @@
-"""Local stand-in for roborender's `roborender_sim.robots` (private, lives on
-the original author's machine and is not on PyPI).
-
-Provides `add_yam_sharpa(scene, xform, side)` with the interface surface
-robot_scene.py actually uses:
-
-- parses assets/yam_sharpa/yam_sharpa_{side}.urdf into a sub ModelBuilder at
-  scale=100 (centimeters) and merges it into `scene` with an `a{b0}` label
-  prefix (robot_scene recovers the arm subtree from that prefix);
-- geometry (<visual>/<collision>) is stripped before parsing: the mesh files
-  are not shipped and the MPM coupling only uses analytic
-  hand spheres placed on the bodies, never Newton collision shapes;
-- returns an ArmHandle with dof_start / arm_dof_count / dof_count,
-  finger_open_q / finger_close_q (open = URDF zero, close = curled flexion
-  posture; robot_scene._anchor_pad_spheres self-calibrates the pad spheres and
-  TCP at the closed posture, so exact angles are not critical),
-  ee_body (the `{side}_hand_wrist` body), ee_offset (identity; robot_scene
-  re-measures it from the closed-pad centroid), and down_y (unit quaternion —
-  every ik.track call in this repo runs with rot_weight=0).
+"""Minimal URDF loader for the YAM arm + Sharpa hand (the interface robot_scene.py needs): parses
+assets/yam_sharpa/yam_sharpa_{side}.urdf into a sub ModelBuilder at scale 100 (centimetres) and merges it into
+the scene with an `a{b0}` label prefix. Geometry (<visual>/<collision>) is stripped before parsing: the renderer
+draws the meshes of asset/robot/ itself, and the coupling only uses analytic hand spheres placed on the bodies.
 """
 
 from __future__ import annotations

@@ -1,0 +1,5 @@
+fluffy_ball.mesh and cylinder.obj are the squishy-ball assets of Zheng, Luo and Li, "Robust and Efficient Penetration-Free
+Elastodynamics without Barriers" (2025), from the authors' supplementary repository
+https://github.com/wiso-enoji/Barrier-Free-Supplementary (assets.zip), redistributed here for the reproduction of their
+Figures 1 and 21 with attribution; that repository states no license, so these two files are not covered by this
+project's MIT license. cylinder_hub.obj and press_keyframes.npy are this project's own.

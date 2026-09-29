@@ -1,11 +1,6 @@
-"""Newton-side robot bench: dual YAM + Sharpa, egodata rig layout.
-
-Builds the two arms with roborender's `add_yam_sharpa` (URDF at scale=100 ->
-centimeters), bases at rig (+-0.38, 0, 0) m yawed per
-egodata_preprocessing_pipeline/sim_setup/rig.json, tabletop z = 0. Replays the
-Deform360 retargeted left-arm trajectory kinematically (eval_fk) and reports
-hand-link collider spheres (positions in rig meters + finite-difference
-velocities) for the MPM coupling.
+"""Newton-side robot bench: two YAM arms with Sharpa hands, bases at (+-0.2667, 0, 0.0254) m yawed 90 degrees,
+tabletop z = 0. Builds the arms from the URDFs of asset/robot/yam_sharpa (scale 100, centimetres), replays a recorded
+joint trajectory kinematically (eval_fk) and reports the hand links' collider spheres.
 """
 
 from __future__ import annotations
@@ -24,12 +19,11 @@ import roborender_sim.robots as _robots  # noqa: E402
 from roborender_sim.robots import add_yam_sharpa  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 
-# the URDFs of asset/robot/yam_sharpa (env2 SlantedFinal weld-relpose hand mount); meshes are
-# symlinked to roborender's
+# the URDFs of asset/robot/yam_sharpa; their meshes are in asset/robot/yam_sharpa/meshes
 _robots.ASSETS_DIR = _Path(__file__).resolve().parents[2] / "asset" / "robot"      # asset/robot/yam_sharpa/
 
 CM_TO_M = 0.01
-RIG_BASE_X_CM = 26.67  # env2: 0.5334 m pitch
+RIG_BASE_X_CM = 26.67  # rig: 0.5334 m pitch
 RIG_BASE_YAW_DEG = 90.0
 
 # keywords selecting hand bodies that should carry collider spheres
@@ -50,7 +44,7 @@ class YamSharpaBench:
         self.device = device
         scene = ModelBuilder()
         if with_table:
-            # tabletop (top at z=0), per env2: 0.762 x 1.270 m
+            # tabletop (top at z=0), 0.762 x 1.270 m
             scene.add_shape_box(
                 body=-1,
                 xform=wp.transform((0.0, 30.0, -2.5), wp.quat_identity()),
@@ -58,7 +52,7 @@ class YamSharpaBench:
                 cfg=ModelBuilder.ShapeConfig(density=0.0, has_shape_collision=False),
             )
             scene.shape_color[-1] = wp.vec3(0.92, 0.90, 0.86)
-            # env2 rail plate: 0.910 x 0.260 x 0.0254 m, top face at z=+2.54 cm
+            # rig rail plate: 0.910 x 0.260 x 0.0254 m, top face at z=+2.54 cm
             scene.add_shape_box(
                 body=-1,
                 xform=wp.transform((0.0, 0.0, 1.27), wp.quat_identity()),
@@ -69,7 +63,7 @@ class YamSharpaBench:
         yaw = wp.quat_from_axis_angle(
             wp.vec3(0.0, 0.0, 1.0), float(np.deg2rad(RIG_BASE_YAW_DEG))
         )
-        BASE_Z_CM = 2.54  # bases stand on the env2 rail-plate top
+        BASE_Z_CM = 2.54  # bases stand on the rig rail-plate top
         self.left = add_yam_sharpa(
             scene, wp.transform((-RIG_BASE_X_CM, 0.0, BASE_Z_CM), yaw), side="left"
         )
@@ -203,42 +197,6 @@ class YamSharpaBench:
         X = wp.transform(*body_q[arm.ee_body])
         p = wp.transform_point(X, wp.transform_get_translation(arm.ee_offset))
         return np.array([p[0], p[1], p[2]]) * CM_TO_M
-
-
-class Deform360Trajectory:
-    """left_arm_qpos playback + contact-gated finger open/close fraction."""
-
-    NPZ = Path("retargeted_qpos.npz")      # a retargeted recording to replay; not used by the hand-shuffle renderer
-
-    def __init__(self, close_time_s=0.35):
-        d = np.load(self.NPZ, allow_pickle=False)
-        self.fps = float(d["fps"])
-        self.arm_q = np.asarray(d["left_arm_qpos"], dtype=np.float64)  # (T, 6)
-        self.n_frames = len(self.arm_q)
-        src = np.asarray(d["source_frame_index"], dtype=int)  # (T,)
-        contact = np.asarray(d["source_contact_active"], dtype=bool)
-        self.contact = np.zeros(self.n_frames, dtype=bool)
-        valid = (src >= 0) & (src < len(contact))
-        self.contact[valid] = contact[np.clip(src, 0, len(contact) - 1)][valid]
-        self.hand_base_T = np.asarray(d["left_hand_base_T_rig"], dtype=np.float64)
-        self.pinch_T = np.asarray(d["left_pinch_T_rig"], dtype=np.float64)
-        self.src_index = src
-        g = np.flatnonzero(self.contact)
-        self.grasp_frame = int(g[0]) if len(g) else self.n_frames
-        self.release_frame = int(g[-1]) + 1 if len(g) else self.n_frames
-        self._slew = 1.0 / (close_time_s * self.fps)
-        self._frac = 0.0
-
-    def finger_frac(self, frame: int) -> float:
-        target = 1.0 if self.contact[min(frame, self.n_frames - 1)] else 0.0
-        step = np.clip(target - self._frac, -self._slew, self._slew)
-        self._frac = float(np.clip(self._frac + step, 0.0, 1.0))
-        return self._frac
-
-    def pinch_point_rig(self) -> np.ndarray:
-        src_at_grasp = self.src_index[self.grasp_frame]
-        src_at_grasp = int(np.clip(src_at_grasp, 0, len(self.pinch_T) - 1))
-        return self.pinch_T[src_at_grasp][:3, 3].copy()
 
 
 class EETracker:
@@ -657,7 +615,7 @@ class ScriptedTearTrajectory:
 class ScriptedGraspTrajectory:
     """Top-down grasp: hover -> descend -> close -> lift -> hold.
 
-    Same interface surface as Deform360Trajectory (fps, n_frames, contact,
+    Interface: fps, n_frames, contact,
     src_index, pinch_T, finger_frac, pinch_point_rig) so run_coupling can use
     either. Targets are TCP (finger-pad centroid) positions in rig meters.
     """

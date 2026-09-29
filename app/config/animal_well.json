@@ -1,5 +1,5 @@
 {
-  "_comment": "Reproduction of the animal-well benchmark of Zheng et al. 2025 (their Figure 4) with the asset and parameters of the libuipc AL-release example: dt 0.01, d_hat 0.002, SNH E=5e5 nu=0.3 rho=1e3, K_min 2, eps 1e-3, CG tol 1e-4, 300 frames, friction off. The container is pool1.obj, the coarse 2x2x2 open box the libuipc example uses (pool.obj is the same surface subdivided 26x26). d_hat is the paper's delta = 1e-3; the libuipc example uses 2e-3. Assets: run asset/animal_well/fetch.sh first (the 71 MB tet mesh is not committed).",
+  "_comment": "Reproduction of the animal-well benchmark of Zheng et al. 2025 (their Figure 4) with the asset and parameters of the libuipc AL-release example: dt 0.01, d_hat 0.002, SNH E=5e5 nu=0.3 rho=1e3, K_min 2, eps 1e-3, CG tol 1e-4, 300 frames, friction off. The container is pool1.obj, the coarse 2x2x2 open box the libuipc example uses (pool.obj is the same surface subdivided 26x26). d_hat is the paper's delta = 1e-3; the libuipc example uses 2e-3. Assets: run asset/animal_well/fetch.sh first (the 71 MB tet mesh is included in asset/animal_well).",
   "simulation": {
     "dt": 0.01,
     "frames": 300,

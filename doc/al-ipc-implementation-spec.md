@@ -2,8 +2,9 @@
 
 **Status:** v0.1 — for review, pre-implementation.
 **Basis:** `al-ipc-math-spec.md` (referenced as **MS §n**), the [Z25] paper, the [UIPC-AL]
-integration (`../libuipc`, branch `al/AL-release`), and the infrastructure of
-`../coupled_solver` (CMake layout, presets, CUDA wheels, LBVH, ACCD, buffer pools).
+integration (`../libuipc`, branch `al/AL-release`: the author's local checkout of the public libuipc, see
+`doc/references.md`), and the infrastructure of `../coupled_solver`, a private in-house solver (CMake layout, presets,
+CUDA wheels, LBVH, ACCD, buffer pools); both paths are kept as written for provenance.
 **Target machine:** Linux, CUDA 13.0, RTX 4090 (sm_89) — the same GPU as [Z25]'s benchmarks,
 so Table 1/2 timings are directly comparable.
 

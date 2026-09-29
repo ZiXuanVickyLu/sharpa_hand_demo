@@ -1,23 +1,6 @@
 #!/usr/bin/env python
-"""Three-view animation of a tear run in the simple GL style.
-
-Black background, light table, the YAM arms + Sharpa hands in the viewer's
-colorful per-link palette, the bread as a two-tone (crust / crumb) surface.
-Three synchronized cameras side by side -- CAM2 (over the shoulder), HEAD
-(front, high) and CAM1 (low, from the side) -- under a title bar with the
-simulation clock, in the layout of the "YAM + SHARPA" case videos.
-
-    EGL_DEVICE=0 uv run python render_triview.py outputs/tear_fiber_hi8x_v2
-    # composite + one stand-alone video per camera (2x the panel resolution)
-    EGL_DEVICE=0 uv run python render_triview.py <run> --isolated
-    # camera tuning / spot checks: composite + per-panel PNGs, no video
-    EGL_DEVICE=0 uv run python render_triview.py <run> --frames 10,190,222,334
-    # robot-only review of a generated joint trajectory (no particles):
-    # <out_dir> receives the videos, motion.npz holds joint_q [F, n_q] + fps
-    EGL_DEVICE=0 uv run python render_triview.py <out_dir> --motion motion.npz
-
-Bread surfaces are cached per frame under <run>/triview_cache/, so camera or
-layout changes re-render in a fraction of the first pass.
+"""Three-view rendering helpers (cameras, GL frame read-back, layout, labels) used by tool/render_hand_shuffle.py;
+also a stand-alone renderer for other keyframe-replay runs of the same rig.
 """
 import argparse
 import glob

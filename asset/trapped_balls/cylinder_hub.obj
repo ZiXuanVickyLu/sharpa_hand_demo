@@ -1,5 +1,5 @@
 # 32-gon can, radius 1.1415207, height 2.829259, hub-fan caps (the shipped cylinder.obj has rim-fan caps
-# whose sliver triangles span the bore; ppf's large-fluffy.ipynb builds it this way and says why).
+# whose sliver triangles span the bore; hub-fan caps avoid them).
 # Vertex order: bottom ring 0-31, top ring 32-63, bottom hub 64, top hub 65 -- press_keyframes.npy relies on it.
 v 1.141520700 0.000000000 0.000000000
 v 1.119586700 0.000000000 0.222699641

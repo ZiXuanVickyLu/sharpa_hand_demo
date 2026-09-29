@@ -37,15 +37,16 @@ cmake --build --preset release-gui --target cs_view -j
 ```
 
 Asset, config and output paths are compiled into the binaries relative to this folder
-(`asset/`, `app/config/`, `output/`), so run everything from anywhere.
+(`asset/`, `app/config/`, `output/`); the config argument is a path relative to the current directory, so run the
+commands below from the repository root.
 
 ## Run
 
 Headless:
 
 ```bash
-build/release/cs_run app/config/animal_well.json --output animal_well
-build/release/cs_run app/config/trapped_balls.json --output trapped_balls
+build/release/cs_run app/config/animal_well.json
+build/release/cs_run app/config/trapped_balls.json
 build/release/cs_run app/config/hand_shuffle_mb.json
 build/release/cs_run app/config/hand_shuffle_phys.json          # also writes .bgeo surfaces
 build/release/cs_run <config> --frames 50      # stop early
@@ -76,7 +77,7 @@ derives such a config from a run and a step) and run as usual.
 The configs are generated files; the generators are the reference for every parameter.
 
 ```bash
-python3 tool/gen_rod_twist.py --name rod_twist_paper --mesh rod/rod300x33.msh --mu-max 6.67 --ramp 0.5 --save-every 4
+python3 tool/gen_rod_twist.py --name rod_twist_paper --mesh rod/rod300x33.msh --mu-max 6.67 --ramp 0.5 --save-every 4 --no-bgeo
 python3 tool/gen_hand_shuffle.py --asset hand_shuffle_mb --name hand_shuffle_mb \
         --ride-stride 3 --newton-rule cipc --inner-max 4 --mat 0.005 --mu-card 0.05      # about 10 min (numpy ray casting)
 python3 tool/gen_hand_shuffle.py --asset hand_shuffle_phys --name hand_shuffle_phys \
@@ -148,7 +149,7 @@ clips are `output/demo/hand_shuffle_phys.mp4` (three views side by side) and `_C
 * `doc/al-ipc-implementation-spec.md`: data model, kernels, the JSON configuration schema (section 5.3).
 * `doc/acceleration-inner-rule-and-mu-bound.md`: the two changes that made the wound rods and the resting cards work (inner Newton rule, penalty bound), written as a reproduction guide.
 * `doc/references.md`: the papers and repositories referenced.
-* `knowledge/`: the paper itself (Zheng, Luo, Li 2025).
+* The paper: Zheng, Luo, Li 2025, https://arxiv.org/abs/2512.12151 (not included; see `doc/references.md`).
 
 ## Layout
 
@@ -160,7 +161,6 @@ app/        cs_run (headless), cs_view (viewer), config/ (the demo scenes)
 tool/       scene generators and analysis scripts (Python)
 asset/      meshes and keyframes of the demos
 doc/        the math and implementation specifications, the acceleration guide, references
-knowledge/  the paper (PDF)
 ```
 
 `asset/animal_well/fetch.sh` and `asset/trapped_balls/fetch.sh` record where the two large
@@ -173,4 +173,5 @@ This project's code, configurations and documents are released under the MIT Lic
 Third-party components keep their own licenses, found in their directories: `ext/cnpy` (MIT),
 `ext/warp_svd` (NVIDIA Warp's SVD, Apache-2.0), `src/libculbvh` and `src/ccd/libcuGTE` (see their
 `LICENSE` files), `ext/HouGeoIO`; the demo meshes came from the sources recorded in `asset/*/fetch.sh`
-and `doc/references.md`, and the robot description under `asset/robot/` belongs to its manufacturers.
+and `doc/references.md`, and the robot description under `asset/robot/` belongs to its manufacturers. `THIRD_PARTY_NOTICES.md` lists every
+third-party component with its origin and license.

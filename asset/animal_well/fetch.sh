@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Fetches the animal-well benchmark assets from the libuipc AL-release tree (not committed
-# here: the tet mesh is 71 MB). Requires the sibling checkout ../../../libuipc with the
-# fork branch available as `al/AL-release` (see doc/references.md).
+# Records where the animal-well benchmark assets came from (they are included here, see LICENSE):
+# the libuipc AL-release tree. Re-fetching needs a checkout of https://github.com/wiso-enoji/libuipc
+# (branch AL-release) at UIPC_DIR with the branch available as `al/AL-release`.
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 UIPC="${UIPC_DIR:-$HERE/../../../libuipc}"

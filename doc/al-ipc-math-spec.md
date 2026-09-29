@@ -5,7 +5,8 @@
 Barriers*, arXiv:2512.12151 (Dec 2025), referred to below as **[Z25]**; the official
 integration into libuipc contributed by Genesis AI (branch `AL-release` of
 `wiso-enoji/libuipc`, and `spiriMirror/libuipc` main), referred to as **[UIPC-AL]**.
-Local checkouts: `../libuipc` (both branches), `../coupled_solver` (infrastructure reference).
+Paths of the form `../libuipc` and `../coupled_solver` below are the author's local checkouts at the time of
+writing: libuipc is public (`doc/references.md`), the coupling solver is a private in-house reference.
 **Companion document:** `al-ipc-implementation-spec.md` (GPU layout, kernels, project structure).
 
 This document restates the method in the exact form we will implement. Every equation here
