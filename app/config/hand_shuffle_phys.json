@@ -1,0 +1,4864 @@
+{
+ "simulation": {
+  "dt": 0.002,
+  "frames": 3630,
+  "gravity": [
+   0,
+   0,
+   -9.81
+  ],
+  "output_dir": "output/hand_shuffle_phys",
+  "save_bgeo": true,
+  "save_npy": true,
+  "save_every": 10,
+  "checkpoint_every": 500,
+  "abort_after_capped_steps": 5
+ },
+ "materials": {
+  "card": {
+   "model": "cloth_stvk",
+   "mu_mem": 346153.84615384607,
+   "nu": 0.3,
+   "density": 800.0,
+   "thickness": 0.0003,
+   "k_bend": 0.001854395604395604
+  }
+ },
+ "bodies": [
+  {
+   "name": "card_L00",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.00028645946322217565,
+    0.0,
+    -0.00028645946322217565
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L00a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L00b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L01",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0005563847029504996,
+    0.0,
+    -0.00013081117723637376
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L01a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L01b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L02",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0008263099426788402,
+    0.0,
+    2.483710874941154e-05
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L02a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L02b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L03",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0010962351824071659,
+    0.0,
+    0.0001804853947352115
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L03a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L03b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L04",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0013614705955574302,
+    0.0,
+    0.00034082350729907327
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L04a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L04b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L05",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0015512676651350528,
+    0.0,
+    0.0005765999634355764
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L05a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L05b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L06",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0017880973309057414,
+    0.0,
+    0.0007653438233790137
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L06a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L06b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L07",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.002039386338171694,
+    0.0,
+    0.0009396283418271872
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L07a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L07b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L08",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.002290675345437627,
+    0.0,
+    0.0011139128602753795
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L08a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L08b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L09",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.002528246811030509,
+    0.0,
+    0.0013019149203966237
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L09a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L09b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L10",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.002726045564594762,
+    0.0,
+    0.0015296896925464966
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L10a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L10b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L11",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0029182172601971137,
+    0.0,
+    0.0017630915226582707
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L11a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L11b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L12",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.003110388955799456,
+    0.0,
+    0.001996493352770054
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L12a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L12b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L13",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.003302560651401809,
+    0.0,
+    0.0022298951828818277
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L13a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L13b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L14",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0034936125360971494,
+    0.0,
+    0.0024644168239006128
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L14a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L14b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L15",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0036609500394244664,
+    0.0,
+    0.0027226528462874215
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L15a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L15b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L16",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.003826298692181563,
+    0.0,
+    0.0029828777192444506
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L16a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L16b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L17",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.00401701616970476,
+    0.0,
+    0.00321773376743538
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L17a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L17b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L18",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.004216555336784012,
+    0.0,
+    0.003443768126070254
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L18a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L18b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L19",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0044160945038632824,
+    0.0,
+    0.0036698024847051083
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L19a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L19b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L20",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.0045656719246170464,
+    0.0,
+    0.0039457985896654705
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L20a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L20b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L21",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.004708596275596739,
+    0.0,
+    0.004228447764399904
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L21a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L21b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L22",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.004891756805347274,
+    0.0,
+    0.004470860760363495
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L22a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L22b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L23",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.00508945127928509,
+    0.0,
+    0.004698739812139805
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L23a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L23b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L24",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.005250990448354498,
+    0.0,
+    0.004962774168784522
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L24a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L24b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L25",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.005412529617423898,
+    0.0,
+    0.005226808525429249
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L25a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L25b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_L26",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_left.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    -0.005558828956103537,
+    0.0,
+    0.005506082712463737
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L26a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_L26b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R00",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.00029066598508866945,
+    0.0,
+    -0.00029066598508866945
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R00a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R00b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R01",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0005629044335839911,
+    0.0,
+    -0.0001373309078698652
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R01a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R01b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R02",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0008351428820793281,
+    0.0,
+    1.600416934892363e-05
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R02a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R02b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R03",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.001107381330574649,
+    0.0,
+    0.00016933924656772843
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R03a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R03b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R04",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0013520993729627803,
+    0.0,
+    0.0003501947298937231
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R04a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R04b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R05",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0015552269090939228,
+    0.0,
+    0.0005726407194767063
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R05a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R05b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R06",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0018078332028462012,
+    0.0,
+    0.0007456079514385537
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R06a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R06b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R07",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0020604394965984814,
+    0.0,
+    0.0009185751834003996
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R07a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R07b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R08",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.002313045790350741,
+    0.0,
+    0.0010915424153622654
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R08a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R08b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R09",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.002531396500677815,
+    0.0,
+    0.0012987652307493173
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R09a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R09b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R10",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.002724497005497732,
+    0.0,
+    0.0015312382516435268
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R10a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R10b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R11",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0029175975103176597,
+    0.0,
+    0.0017637112725377249
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R11a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R11b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R12",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0031106980151375764,
+    0.0,
+    0.001996184293431933
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R12a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R12b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R13",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.003303798519957507,
+    0.0,
+    0.0022286573143261296
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R13a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R13b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R14",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0034968990247774196,
+    0.0,
+    0.0024611303352203425
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R14a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R14b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R15",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.003664189984015316,
+    0.0,
+    0.002719412901696572
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R15a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R15b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R16",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0038351747592280175,
+    0.0,
+    0.002974001652197996
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R16a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R16b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R17",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.004016722085989785,
+    0.0,
+    0.0032180278511503542
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R17a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R17b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R18",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.004217923828778494,
+    0.0,
+    0.003442399634075771
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R18a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R18b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R19",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.00441912557156722,
+    0.0,
+    0.003666771417001171
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R19a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R19b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R20",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.004606498306985959,
+    0.0,
+    0.0039049722072965584
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R20a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R20b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R21",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0047858945293613045,
+    0.0,
+    0.004151149510635339
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R21a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R21b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R22",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.004942292300190189,
+    0.0,
+    0.0044203252655205805
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R22a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R22b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R23",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.005098690071019061,
+    0.0,
+    0.004689501020405834
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R23a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R23b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R24",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.0052527982919519135,
+    0.0,
+    0.004960966325187106
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R24a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R24b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R25",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.005414070846070907,
+    0.0,
+    0.00522526729678224
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R25a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R25b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  },
+  {
+   "name": "card_R26",
+   "type": "cloth",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_card_right.obj",
+   "material": "card",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0.005559131444793036,
+    0.0,
+    0.005505780223774238
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 5e-05,
+   "friction": 0.02,
+   "self_collision": false,
+   "dirichlet": [
+    {
+     "select": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R26a.npy",
+      "substeps": 10
+     },
+     "release_frame": 550
+    },
+    {
+     "select": [
+      1,
+      16,
+      31,
+      46,
+      61,
+      76,
+      91
+     ],
+     "motion": {
+      "type": "keyframes",
+      "file": "hand_shuffle_phys/hand_shuffle_phys_rows_R26b.npy",
+      "substeps": 10
+     },
+     "release_frame": 450
+    }
+   ]
+  }
+ ],
+ "colliders": [
+  {
+   "name": "hand_left",
+   "type": "tri",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_left.obj",
+   "thickness": 0.0,
+   "friction": 0.5,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "motion": {
+    "type": "keyframes",
+    "file": "hand_shuffle_phys/hand_shuffle_phys_left_kf.npy",
+    "substeps": 10
+   }
+  },
+  {
+   "name": "thumb_left",
+   "type": "tri",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_thumb_left.obj",
+   "thickness": 0.0,
+   "friction": 0.7,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "motion": {
+    "type": "keyframes",
+    "file": "hand_shuffle_phys/hand_shuffle_phys_thumb_left_kf.npy",
+    "substeps": 10
+   }
+  },
+  {
+   "name": "hand_right",
+   "type": "tri",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_right.obj",
+   "thickness": 0.0,
+   "friction": 0.5,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "motion": {
+    "type": "keyframes",
+    "file": "hand_shuffle_phys/hand_shuffle_phys_right_kf.npy",
+    "substeps": 10
+   }
+  },
+  {
+   "name": "thumb_right",
+   "type": "tri",
+   "file": "hand_shuffle_phys/hand_shuffle_phys_thumb_right.obj",
+   "thickness": 0.0,
+   "friction": 0.7,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "motion": {
+    "type": "keyframes",
+    "file": "hand_shuffle_phys/hand_shuffle_phys_thumb_right_kf.npy",
+    "substeps": 10
+   }
+  }
+ ],
+ "planes": [
+  {
+   "point": [
+    0,
+    0,
+    0.005
+   ],
+   "normal": [
+    0,
+    0,
+    1
+   ],
+   "friction": 0.5
+  }
+ ],
+ "contact_table": {
+  "exclude": [],
+  "friction": [
+   [
+    "card_L00",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L00",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L01",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L01",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L02",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L02",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L03",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L03",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L04",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L04",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L05",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L05",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L06",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L06",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L07",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L07",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L08",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L08",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L09",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L09",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L10",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L10",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L11",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L11",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L12",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L12",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L13",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L13",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L14",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L14",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L15",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L15",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L16",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L16",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L17",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L17",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L18",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L18",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L19",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L19",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L20",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L20",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L21",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L21",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L22",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L22",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L23",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L23",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L24",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L24",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L25",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L25",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L26",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_L26",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_L00",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L00",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L01",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L01",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L02",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L02",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L03",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L03",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L04",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L04",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L05",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L05",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L06",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L06",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L07",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L07",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L08",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L08",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L09",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L09",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L10",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L10",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L11",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L11",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L12",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L12",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L13",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L13",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L14",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L14",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L15",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L15",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L16",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L16",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L17",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L17",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L18",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L18",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L19",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L19",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L20",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L20",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L21",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L21",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L22",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L22",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L23",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L23",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L24",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L24",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L25",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L25",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_L26",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_L26",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R00",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R00",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R01",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R01",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R02",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R02",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R03",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R03",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R04",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R04",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R05",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R05",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R06",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R06",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R07",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R07",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R08",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R08",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R09",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R09",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R10",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R10",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R11",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R11",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R12",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R12",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R13",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R13",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R14",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R14",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R15",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R15",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R16",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R16",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R17",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R17",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R18",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R18",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R19",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R19",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R20",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R20",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R21",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R21",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R22",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R22",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R23",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R23",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R24",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R24",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R25",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R25",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R26",
+    "hand_left",
+    0.8
+   ],
+   [
+    "card_R26",
+    "hand_right",
+    0.8
+   ],
+   [
+    "card_R00",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R00",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R01",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R01",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R02",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R02",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R03",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R03",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R04",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R04",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R05",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R05",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R06",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R06",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R07",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R07",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R08",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R08",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R09",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R09",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R10",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R10",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R11",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R11",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R12",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R12",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R13",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R13",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R14",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R14",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R15",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R15",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R16",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R16",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R17",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R17",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R18",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R18",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R19",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R19",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R20",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R20",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R21",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R21",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R22",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R22",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R23",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R23",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R24",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R24",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R25",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R25",
+    "thumb_right",
+    0.7
+   ],
+   [
+    "card_R26",
+    "thumb_left",
+    0.7
+   ],
+   [
+    "card_R26",
+    "thumb_right",
+    0.7
+   ]
+  ]
+ },
+ "contact": {
+  "enable": true,
+  "d_hat": 0.0002,
+  "epsilon": 0.001,
+  "K_min": 2,
+  "max_outer_iters": 500,
+  "decay_factor": 0.9,
+  "decay_remove_threshold": 0.01,
+  "mu_mode": "diag_max",
+  "mu_scale": 0.1,
+  "alpha_lower_bound": 1e-06,
+  "mu_max": 0.03,
+  "stall": {
+   "iters": 50,
+   "alpha": 0.0001,
+   "mu_factor": 2.0,
+   "d_hat_factor": 0.5,
+   "max_adaptations": 0
+  },
+  "ccd": {
+   "s": 0.1,
+   "max_iter": 100,
+   "float_screen": false,
+   "rebuild_quality_ratio": 1.5
+  },
+  "inversion_free": "off",
+  "self_collision_default": false,
+  "friction": {
+   "enable": true,
+   "eps_v": 0.0001,
+   "normal_force": "paper"
+  },
+  "drop_parallel_edge_pairs": false
+ },
+ "newton": {
+  "inner_max_iters": 4,
+  "line_search": {
+   "max_halvings": 30,
+   "energy_tolerance": 1e-12,
+   "batched": true
+  },
+  "early_accept_velocity_tol": 0.0,
+  "increment_velocity_tol": 0.0005
+ },
+ "linear_solver": {
+  "type": "pcg",
+  "preconditioner": "block_jacobi",
+  "rel_tol": 0.0001,
+  "max_iters": 10000,
+  "check_interval": 8,
+  "graph": true,
+  "fused": true,
+  "fused_max_rows": 65536,
+  "rigid_coarse": true
+ },
+ "logging": {
+  "level": "info",
+  "stats_csv": "stats.csv",
+  "timing": true,
+  "debug_check_penetration": false
+ }
+}

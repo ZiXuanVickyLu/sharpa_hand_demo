@@ -1,0 +1,469 @@
+{
+ "simulation": {
+  "dt": 0.025,
+  "frames": 4000,
+  "gravity": [
+   0,
+   0,
+   0
+  ],
+  "output_dir": "rod_twist_paper",
+  "save_bgeo": false,
+  "save_npy": true,
+  "save_every": 4,
+  "checkpoint_every": 400,
+  "abort_after_capped_steps": 5
+ },
+ "materials": {
+  "rod": {
+   "model": "NH",
+   "E": 10000.0,
+   "nu": 0.4,
+   "density": 1000.0
+  }
+ },
+ "bodies": [
+  {
+   "name": "rod_0",
+   "type": "tet",
+   "file": "rod/rod300x33.msh",
+   "material": "rod",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    -0.1,
+    -0.1
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 0.0,
+   "friction": 0.0,
+   "self_collision": true,
+   "dirichlet": [
+    {
+     "select": {
+      "bbox_min": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       0.01,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": -72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    },
+    {
+     "select": {
+      "bbox_min": [
+       0.99,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": 72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    }
+   ]
+  },
+  {
+   "name": "rod_1",
+   "type": "tet",
+   "file": "rod/rod300x33.msh",
+   "material": "rod",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    -0.1,
+    0.1
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 0.0,
+   "friction": 0.0,
+   "self_collision": true,
+   "dirichlet": [
+    {
+     "select": {
+      "bbox_min": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       0.01,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": -72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    },
+    {
+     "select": {
+      "bbox_min": [
+       0.99,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": 72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    }
+   ]
+  },
+  {
+   "name": "rod_2",
+   "type": "tet",
+   "file": "rod/rod300x33.msh",
+   "material": "rod",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0.1,
+    -0.1
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 0.0,
+   "friction": 0.0,
+   "self_collision": true,
+   "dirichlet": [
+    {
+     "select": {
+      "bbox_min": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       0.01,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": -72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    },
+    {
+     "select": {
+      "bbox_min": [
+       0.99,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": 72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    }
+   ]
+  },
+  {
+   "name": "rod_3",
+   "type": "tet",
+   "file": "rod/rod300x33.msh",
+   "material": "rod",
+   "move_to_origin": false,
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0.1,
+    0.1
+   ],
+   "initial_velocity": [
+    0,
+    0,
+    0
+   ],
+   "thickness": 0.0,
+   "friction": 0.0,
+   "self_collision": true,
+   "dirichlet": [
+    {
+     "select": {
+      "bbox_min": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       0.01,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": -72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    },
+    {
+     "select": {
+      "bbox_min": [
+       0.99,
+       0.0,
+       0.0
+      ],
+      "bbox_max": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "motion": {
+      "type": "rotation",
+      "axis": [
+       1,
+       0,
+       0
+      ],
+      "center": [
+       0,
+       0,
+       0
+      ],
+      "deg_per_second": 72.0,
+      "start_frame": 0,
+      "end_frame": 4000,
+      "ramp_time": 0.5
+     }
+    }
+   ]
+  }
+ ],
+ "colliders": [],
+ "planes": [],
+ "contact": {
+  "enable": true,
+  "d_hat": 0.0010559993359151385,
+  "epsilon": 0.001,
+  "K_min": 2,
+  "max_outer_iters": 500,
+  "decay_factor": 0.9,
+  "decay_remove_threshold": 0.01,
+  "mu_mode": "diag_max",
+  "mu_scale": 0.1,
+  "alpha_lower_bound": 1e-06,
+  "stall": {
+   "iters": 50,
+   "alpha": 0.0001,
+   "mu_factor": 2.0,
+   "d_hat_factor": 0.5,
+   "max_adaptations": 0
+  },
+  "ccd": {
+   "s": 0.1,
+   "max_iter": 100,
+   "float_screen": false,
+   "rebuild_quality_ratio": 1.5
+  },
+  "inversion_free": "auto",
+  "self_collision_default": true,
+  "friction": {
+   "enable": false,
+   "eps_v": 0.001,
+   "normal_force": "paper"
+  },
+  "drop_parallel_edge_pairs": false,
+  "mu_max": 6.67
+ },
+ "newton": {
+  "inner_max_iters": 8,
+  "line_search": {
+   "max_halvings": 30,
+   "energy_tolerance": 1e-12,
+   "batched": true
+  },
+  "early_accept_velocity_tol": 0.0,
+  "increment_velocity_tol": 0.010559993359151386
+ },
+ "linear_solver": {
+  "type": "pcg",
+  "preconditioner": "block_jacobi",
+  "rel_tol": 0.0001,
+  "max_iters": 10000,
+  "check_interval": 8,
+  "graph": true,
+  "fused": true,
+  "fused_max_rows": 65536
+ },
+ "contact_table": {
+  "exclude": [],
+  "friction": []
+ },
+ "logging": {
+  "level": "info",
+  "stats_csv": "stats.csv",
+  "timing": true,
+  "debug_check_penetration": false
+ }
+}

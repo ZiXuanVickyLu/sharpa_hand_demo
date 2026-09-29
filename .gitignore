@@ -1,0 +1,12 @@
+# build trees and fetched dependencies
+build/
+# simulation outputs (the clips in output/demo are kept)
+output/output/
+output/test/
+# Python bytecode
+__pycache__/
+*.pyc
+# viewer settings
+imgui.ini
+.polyscope.ini
+*.log

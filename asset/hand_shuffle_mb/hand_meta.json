@@ -1,0 +1,441 @@
+{
+ "first": 100,
+ "last": 796,
+ "fps": 50.0,
+ "phases": [
+  {
+   "name": "reach",
+   "start": 0,
+   "end": 99
+  },
+  {
+   "name": "approach",
+   "start": 100,
+   "end": 144
+  },
+  {
+   "name": "hold",
+   "start": 145,
+   "end": 164
+  },
+  {
+   "name": "bow",
+   "start": 165,
+   "end": 214
+  },
+  {
+   "name": "riffle",
+   "start": 215,
+   "end": 544
+  },
+  {
+   "name": "riffle_done",
+   "start": 545,
+   "end": 559
+  },
+  {
+   "name": "release_lift",
+   "start": 560,
+   "end": 629
+  },
+  {
+   "name": "lower",
+   "start": 630,
+   "end": 659
+  },
+  {
+   "name": "push",
+   "start": 660,
+   "end": 721
+  },
+  {
+   "name": "squeeze",
+   "start": 722,
+   "end": 741
+  },
+  {
+   "name": "back_off",
+   "start": 742,
+   "end": 756
+  },
+  {
+   "name": "withdraw",
+   "start": 757,
+   "end": 796
+  },
+  {
+   "name": "home",
+   "start": 797,
+   "end": 906
+  }
+ ],
+ "links": {
+  "left": {
+   "left_hand_C_MC": [
+    0,
+    802
+   ],
+   "left_thumb_CMC_VL": [
+    802,
+    908
+   ],
+   "left_thumb_MC": [
+    908,
+    1671
+   ],
+   "left_thumb_MCP_VL": [
+    1671,
+    1751
+   ],
+   "left_thumb_PP": [
+    1751,
+    2005
+   ],
+   "left_thumb_DP": [
+    2005,
+    2328
+   ],
+   "left_thumb_elastomer": [
+    2328,
+    2488
+   ],
+   "left_index_MCP_VL": [
+    2488,
+    2590
+   ],
+   "left_index_PP": [
+    2590,
+    2861
+   ],
+   "left_index_MP": [
+    2861,
+    3074
+   ],
+   "left_index_DP": [
+    3074,
+    3333
+   ],
+   "left_index_elastomer": [
+    3333,
+    3471
+   ],
+   "left_middle_MCP_VL": [
+    3471,
+    3573
+   ],
+   "left_middle_PP": [
+    3573,
+    3844
+   ],
+   "left_middle_MP": [
+    3844,
+    4057
+   ],
+   "left_middle_DP": [
+    4057,
+    4316
+   ],
+   "left_middle_elastomer": [
+    4316,
+    4454
+   ],
+   "left_ring_MCP_VL": [
+    4454,
+    4556
+   ],
+   "left_ring_PP": [
+    4556,
+    4827
+   ],
+   "left_ring_MP": [
+    4827,
+    5040
+   ],
+   "left_ring_DP": [
+    5040,
+    5299
+   ],
+   "left_ring_elastomer": [
+    5299,
+    5437
+   ],
+   "left_pinky_MC": [
+    5437,
+    5883
+   ],
+   "left_pinky_MCP_VL": [
+    5883,
+    5985
+   ],
+   "left_pinky_PP": [
+    5985,
+    6256
+   ],
+   "left_pinky_MP": [
+    6256,
+    6469
+   ],
+   "left_pinky_DP": [
+    6469,
+    6728
+   ],
+   "left_pinky_elastomer": [
+    6728,
+    6866
+   ]
+  },
+  "right": {
+   "right_hand_C_MC": [
+    0,
+    809
+   ],
+   "right_thumb_CMC_VL": [
+    809,
+    911
+   ],
+   "right_thumb_MC": [
+    911,
+    1686
+   ],
+   "right_thumb_MCP_VL": [
+    1686,
+    1766
+   ],
+   "right_thumb_PP": [
+    1766,
+    2014
+   ],
+   "right_thumb_DP": [
+    2014,
+    2337
+   ],
+   "right_thumb_elastomer": [
+    2337,
+    2497
+   ],
+   "right_index_MCP_VL": [
+    2497,
+    2583
+   ],
+   "right_index_PP": [
+    2583,
+    2854
+   ],
+   "right_index_MP": [
+    2854,
+    3064
+   ],
+   "right_index_DP": [
+    3064,
+    3323
+   ],
+   "right_index_elastomer": [
+    3323,
+    3461
+   ],
+   "right_middle_MCP_VL": [
+    3461,
+    3547
+   ],
+   "right_middle_PP": [
+    3547,
+    3818
+   ],
+   "right_middle_MP": [
+    3818,
+    4028
+   ],
+   "right_middle_DP": [
+    4028,
+    4287
+   ],
+   "right_middle_elastomer": [
+    4287,
+    4425
+   ],
+   "right_ring_MCP_VL": [
+    4425,
+    4511
+   ],
+   "right_ring_PP": [
+    4511,
+    4782
+   ],
+   "right_ring_MP": [
+    4782,
+    4992
+   ],
+   "right_ring_DP": [
+    4992,
+    5251
+   ],
+   "right_ring_elastomer": [
+    5251,
+    5389
+   ],
+   "right_pinky_MC": [
+    5389,
+    5853
+   ],
+   "right_pinky_MCP_VL": [
+    5853,
+    5939
+   ],
+   "right_pinky_PP": [
+    5939,
+    6210
+   ],
+   "right_pinky_MP": [
+    6210,
+    6420
+   ],
+   "right_pinky_DP": [
+    6420,
+    6679
+   ],
+   "right_pinky_elastomer": [
+    6679,
+    6817
+   ]
+  }
+ },
+ "motion": "motion.npz",
+ "scene_cm": {
+  "scale": 1.25,
+  "yc": 30.0,
+  "floor_z": 0.0,
+  "zlift": 0.6,
+  "card_cm": [
+   11.1125,
+   7.0
+  ],
+  "cards_per_packet": 27,
+  "packet_thickness_cm": 1.049625,
+  "packet_tilt_deg": 45.0,
+  "top_x": 2.321137947032245,
+  "stack_dir": [
+   -0.7071067811865475,
+   0.0,
+   0.7071067811865476
+  ],
+  "card0_centre_left": [
+   -6.25,
+   30.0,
+   4.6
+  ],
+  "T0": [
+   -2.321137947032245,
+   30.0,
+   8.528862052967755
+  ],
+  "G0": [
+   -10.178862052967755,
+   30.0,
+   0.6711379470322448
+  ],
+  "T_bow": [
+   -2.321137947032245,
+   30.0,
+   7.903862052967755
+  ],
+  "G_bow": [
+   -9.553862052967755,
+   30.0,
+   0.6711379470322448
+  ],
+  "thumb_contact": [
+   -2.69223642463371,
+   30.0,
+   8.89996053056922
+  ],
+  "finger_contact": [
+   -10.54772410593551,
+   30.0,
+   1.04
+  ],
+  "finger_dy": {
+   "index": 3.05,
+   "middle": 1.0,
+   "ring": -1.0,
+   "pinky": -3.05
+  },
+  "rake_x": [
+   -11.25,
+   -5.7562500000000005
+  ],
+  "rake_z": 1.04,
+  "rake_speed_cm_s": 5.034594941348973,
+  "rake_lowest_cm": 0.20149257030385748,
+  "release_lag_frames": 6,
+  "note": "left-hand values (mirror x for the right hand); T0/G0 = card 0's upper-inner / lower-outer edge, *_bow after the bow; thumb_contact = middle of the upper end face, finger_contact = the point of the lower end face at the fingertips' working height (its middle at 45 deg); fingers sit at finger_contact + (0, finger_dy, 0). The fingertip pads are near-vertical (distal phalanges 7-35 deg off), not normal to the tilted end face: the top cards' lower edge sits ~0.3 cm inside the pads, card 0's ~0.4 cm clear. rake_lowest_cm = lowest hand vertex while raking (rounded tips: the flat pad face spans z ~0.6-1.5 cm and recedes below)"
+ },
+ "scene_m": {
+  "scale": 1.25,
+  "yc": 0.3,
+  "floor_z": 0.0,
+  "zlift": 0.006,
+  "card_cm": [
+   0.11112500000000002,
+   0.07
+  ],
+  "cards_per_packet": 27,
+  "packet_thickness_cm": 0.01049625,
+  "packet_tilt_deg": 45.0,
+  "top_x": 0.02321137947032245,
+  "stack_dir": [
+   -0.0070710678118654745,
+   0.0,
+   0.007071067811865476
+  ],
+  "card0_centre_left": [
+   -0.0625,
+   0.3,
+   0.046
+  ],
+  "T0": [
+   -0.02321137947032245,
+   0.3,
+   0.08528862052967755
+  ],
+  "G0": [
+   -0.10178862052967755,
+   0.3,
+   0.0067113794703224485
+  ],
+  "T_bow": [
+   -0.02321137947032245,
+   0.3,
+   0.07903862052967756
+  ],
+  "G_bow": [
+   -0.09553862052967756,
+   0.3,
+   0.0067113794703224485
+  ],
+  "thumb_contact": [
+   -0.026922364246337097,
+   0.3,
+   0.0889996053056922
+  ],
+  "finger_contact": [
+   -0.1054772410593551,
+   0.3,
+   0.010400000000000001
+  ],
+  "finger_dy": {
+   "index": 3.05,
+   "middle": 1.0,
+   "ring": -1.0,
+   "pinky": -3.05
+  },
+  "rake_x": [
+   -0.1125,
+   -0.05756250000000001
+  ],
+  "rake_z": 0.010400000000000001,
+  "rake_speed_cm_s": 0.050345949413489736,
+  "rake_lowest_cm": 0.0020149257030385747,
+  "release_lag_frames": 6,
+  "note": "left-hand values (mirror x for the right hand); T0/G0 = card 0's upper-inner / lower-outer edge, *_bow after the bow; thumb_contact = middle of the upper end face, finger_contact = the point of the lower end face at the fingertips' working height (its middle at 45 deg); fingers sit at finger_contact + (0, finger_dy, 0). The fingertip pads are near-vertical (distal phalanges 7-35 deg off), not normal to the tilted end face: the top cards' lower edge sits ~0.3 cm inside the pads, card 0's ~0.4 cm clear. rake_lowest_cm = lowest hand vertex while raking (rounded tips: the flat pad face spans z ~0.6-1.5 cm and recedes below)"
+ }
+}

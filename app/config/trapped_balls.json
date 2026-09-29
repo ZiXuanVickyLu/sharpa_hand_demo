@@ -1,0 +1,77 @@
+{
+  "_comment": "Reproduction of Zheng et al. 2025 Figure 21, 'Trapped squishy balls', from the authors' own scene (Barrier-Free-Supplementary, CubicBarrier/trapped2.ipynb) and Table 2: two copies of fluffy_ball.mesh at scale 0.027 (radius 0.485 m) at x = +-0.5, no gravity, inside an inverted analytic sphere whose radius goes 1.0 -> 0.4 m over the first 2 s and back out to 5.0 m by 3 s. SNH E=5e5 nu=0.35 rho=1e3, h=0.01, delta=1e-3, K_min 2, eps 1e-3, no friction, 300 frames. The notebook adds a uniform jitter in [0, 0.01) per axis to each ball; omitted here so the run is deterministic. Asset: run asset/trapped_balls/fetch.sh first.",
+  "simulation": {
+    "dt": 0.01,
+    "frames": 300,
+    "gravity": [0, 0, 0],
+    "output_dir": "output/trapped_balls",
+    "save_bgeo": true,
+    "save_every": 1
+  },
+  "contact": {
+    "enable": true,
+    "d_hat": 0.001,
+    "epsilon": 1e-3,
+    "K_min": 2,
+    "max_outer_iters": 500,
+    "decay_factor": 0.9,
+    "decay_remove_threshold": 0.01,
+    "mu_mode": "diag_max",
+    "mu_scale": 0.1,
+    "alpha_lower_bound": 1e-6,
+    "toi_tie_tolerance": 1e-6,
+    "stall": { "iters": 50, "alpha": 1e-4, "mu_factor": 2.0, "d_hat_factor": 0.5, "max_adaptations": 10 },
+    "ccd": { "s": 0.1, "max_iter": 100, "float_screen": false, "rebuild_quality_ratio": 1.5 },
+    "inversion_free": "auto",
+    "self_collision_default": true,
+    "toi_filter_domain": "paper",
+    "friction": { "enable": false, "eps_v": 1e-3, "normal_force": "paper" }
+  },
+  "newton": {
+    "inner_max_iters": 8,
+    "line_search": { "max_halvings": 30, "energy_tolerance": 1e-12 },
+    "early_accept_velocity_tol": 0
+  },
+  "linear_solver": { "type": "pcg", "preconditioner": "block_jacobi", "rel_tol": 1e-4, "max_iters": 2000, "check_interval": 8 },
+  "materials": {
+    "ball": { "model": "SNH", "E": 500000.0, "nu": 0.35, "density": 1000.0, "snh_lambda_reparam": true }
+  },
+  "bodies": [
+    {
+      "name": "ball0",
+      "type": "tet",
+      "file": "trapped_balls/fluffy_ball.mesh",
+      "material": "ball",
+      "move_to_origin": false,
+      "scale": [0.027, 0.027, 0.027],
+      "rotation": [0, 0, 0],
+      "translation": [0.5, 0, 0],
+      "initial_velocity": [0, 0, 0],
+      "thickness": 0.0,
+      "friction": 0.0,
+      "self_collision": true
+    },
+    {
+      "name": "ball1",
+      "type": "tet",
+      "file": "trapped_balls/fluffy_ball.mesh",
+      "material": "ball",
+      "move_to_origin": false,
+      "scale": [0.027, 0.027, 0.027],
+      "rotation": [0, 0, 0],
+      "translation": [-0.5, 0, 0],
+      "initial_velocity": [0, 0, 0],
+      "thickness": 0.0,
+      "friction": 0.0,
+      "self_collision": true
+    }
+  ],
+  "colliders": [],
+  "planes": [],
+  "spheres": [
+    { "center": [0, 0, 0], "radius": 1.0, "inverted": true, "friction": 0.0,
+      "radius_keyframes": [[0.0, 1.0], [2.0, 0.4], [3.0, 5.0]] }
+  ],
+  "contact_table": { "exclude": [], "friction": [] },
+  "logging": { "level": "info", "stats_csv": "stats.csv", "timing": true, "debug_check_penetration": false }
+}

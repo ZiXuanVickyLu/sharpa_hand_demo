@@ -1,0 +1,120 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "release",
+      "displayName": "Linux Release (double, gcc host)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CS_USE_DOUBLE": "ON",
+        "CS_ENABLE_GUI": "OFF"
+      }
+    },
+    {
+      "name": "relwithdebinfo",
+      "displayName": "Linux RelWithDebInfo (double, gcc host)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/relwithdebinfo",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CS_USE_DOUBLE": "ON",
+        "CS_ENABLE_GUI": "OFF"
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "Linux Debug (double, gcc host)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CUDA_FLAGS": "-G -lineinfo",
+        "CS_USE_DOUBLE": "ON",
+        "CS_ENABLE_GUI": "OFF"
+      }
+    },
+    {
+      "name": "release-float",
+      "displayName": "Linux Release (float, gcc host)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release-float",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CS_USE_DOUBLE": "OFF",
+        "CS_ENABLE_GUI": "OFF"
+      }
+    },
+    {
+      "name": "release-clang",
+      "displayName": "Linux Release (double, clang host via cmake/toolchain.cmake)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release-clang",
+      "toolchainFile": "${sourceDir}/cmake/toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CS_USE_DOUBLE": "ON",
+        "CS_ENABLE_GUI": "OFF"
+      }
+    },
+    {
+      "name": "release-gui",
+      "displayName": "Linux Release with polyscope viewer",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release-gui",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CS_USE_DOUBLE": "ON",
+        "CS_ENABLE_GUI": "ON"
+      }
+    },
+    {
+      "name": "win-release-double",
+      "displayName": "Windows Release (double)",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/win-release-double",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "cacheVariables": {
+        "CS_USE_DOUBLE": "ON",
+        "CS_ENABLE_GUI": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "relwithdebinfo",
+      "configurePreset": "relwithdebinfo"
+    },
+    {
+      "name": "debug",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "release-float",
+      "configurePreset": "release-float"
+    },
+    {
+      "name": "release-clang",
+      "configurePreset": "release-clang"
+    },
+    {
+      "name": "release-gui",
+      "configurePreset": "release-gui"
+    },
+    {
+      "name": "win-release-double",
+      "configurePreset": "win-release-double",
+      "configuration": "Release"
+    }
+  ]
+}
