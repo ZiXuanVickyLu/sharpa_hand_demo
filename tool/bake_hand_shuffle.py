@@ -73,7 +73,7 @@ def main():
                     "sits deeper along the card axis (0 = perpendicular to the card axis; a few degrees stop the held "
                     "packet creeping toward the inner edge along the pad and make the freed card snap harder)")
     a = ap.parse_args()
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "render"))
+    sys.path[:0] = [os.path.join(os.path.dirname(os.path.abspath(__file__)), d) for d in ("render", "robot")]
     import warp as wp
     wp.config.quiet = True
     from robot_scene import YamSharpaBench
@@ -98,7 +98,7 @@ def main():
     if os.path.abspath(a.motion) != snap: shutil.copyfile(a.motion, snap)
     cams = os.path.join(os.path.dirname(os.path.abspath(a.motion)), "cams.json")
     if os.path.exists(cams): shutil.copyfile(cams, os.path.join(os.path.abspath(a.out), "cams.json"))
-    gen = os.path.join(os.getcwd(), "gen_shuffle_motion.py")   # the IK generator as it was when this motion was baked
+    gen = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ik", "gen_shuffle_motion.py")   # the IK generator as it was when this motion was baked
     if os.path.exists(gen): shutil.copyfile(gen, os.path.join(os.path.abspath(a.out), "gen_shuffle_motion.snapshot.py"))
     meta["motion"] = os.path.basename(snap)               # relative to the asset directory
     meta["scene_cm"] = sc                       # the generator's record, as written (cm, rig frame)

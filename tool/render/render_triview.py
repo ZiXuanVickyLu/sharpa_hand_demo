@@ -12,7 +12,7 @@ import zipfile
 
 import numpy as np
 
-sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+sys.path[:0] = [os.path.dirname(os.path.realpath(__file__)), os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "robot")]
 # render_mesh defaults EGL_DEVICE to 1 (its author's 8-GPU box); on a
 # single-GPU machine that is a black frame, so default to device 0 here
 os.environ.setdefault("EGL_DEVICE", "0")

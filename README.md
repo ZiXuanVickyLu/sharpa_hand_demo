@@ -21,7 +21,9 @@ arXiv 2512.12151), packaged with four demo scenes and the assets they need:
   (for the viewer) polyscope are fetched by CMake's FetchContent into `build/*/_deps`.
 * For the viewer (`cs_view`): OpenGL and X11 development packages
   (`libgl1-mesa-dev libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev`).
-* Python 3 with numpy for the scene generators; matplotlib for one plotting tool.
+* Python 3 with numpy for the scene generators (`tool/gen_*.py`). The motion generator, the bake and the clip renderer
+  under `tool/` need more (warp, newton, scipy, imageio, ...), declared in `pyproject.toml` and installed with
+  [uv](https://docs.astral.sh/uv/): `uv sync` once, then `uv run python tool/...`.
 
 The CUDA architecture is auto-detected from the installed GPU at configure time. If you move the
 folder to a machine with a different GPU, delete `build/` and configure again.
@@ -119,11 +121,10 @@ and `hand_shuffle_mb_CAM1/_CAM2/_HEAD.mp4`. To look at a run here, use `cs_view`
 **Rendering the clips.** `tool/render_hand_shuffle.py` made every clip in `output/demo/`: it replays the
 hand IK recording (`asset/<asset>/motion.npz`) on the robot model (`asset/robot/`, URDF and meshes) and draws
 the simulated cards from the run's `x_<step>.npy`, into the three-view composite and, with `--isolated`, one
-video per camera. It needs the Python packages of `tool/render/requirements.txt` and a GPU with EGL:
+video per camera. It needs the Python environment of `pyproject.toml` (`uv sync`) and a GPU with EGL:
 
 ```bash
-pip install -r tool/render/requirements.txt
-EGL_DEVICE=0 python3 tool/render_hand_shuffle.py \
+EGL_DEVICE=0 uv run python tool/render_hand_shuffle.py \
     --run output/output/hand_shuffle_phys --config app/config/hand_shuffle_phys.json \
     --sim asset/hand_shuffle_phys/hand_shuffle_phys_sim.json --cams asset/hand_shuffle_phys/cams.json \
     --out output/demo/hand_shuffle_phys.mp4 --isolated
@@ -131,7 +132,7 @@ EGL_DEVICE=0 python3 tool/render_hand_shuffle.py \
 
 and the same with `hand_shuffle_mb` in the four names for the moving-boundary demo (`--frames 0,60,120
 --png-dir DIR` renders single frames instead). `tool/bake_hand_shuffle.py`, which bakes a recording into the
-hand colliders and keyframes of an asset directory, uses the same modules and packages.
+hand colliders and keyframes of an asset directory, uses the same environment (`uv run python tool/bake_hand_shuffle.py ...`).
 
 `asset/hand_shuffle_phys/` is a second bake of the same rig for the physical-grip variant, from a motion
 generated with extra options of that pipeline's IK: the bow is done by the thumb alone, the riffle ends
@@ -142,6 +143,35 @@ friction. The directory holds the files the run reads (`hand_shuffle_phys_*`) an
 `gen_hand_shuffle.py` needs to regenerate them (`motion.npz`, `hand_meta.json`, the full-resolution bake
 `hand_left/right.obj` and `_kf.npy`). The run writes `surface_<step>.bgeo` every 10 steps; its four
 clips are `output/demo/hand_shuffle_phys.mp4` (three views side by side) and `_CAM1`, `_CAM2`, `_HEAD`.
+
+## Regenerating the hand motions (IK)
+
+`tool/ik/gen_shuffle_motion.py` is the inverse-kinematics generator that produced both recordings: it plans the two
+arms and hands (the robot model of `asset/robot/`) around the card packets, frame by frame at 50 Hz, and writes
+`shuffle_motion.npz` (joint trajectory, link transforms, targets, clearances) plus a report. The bake then turns a
+recording into an asset directory, and `tool/gen_hand_shuffle.py` builds the config from that. Both shipped
+recordings reproduce from this folder alone (the physical-grip one bit for bit, the moving-boundary one to
+below 1e-6 rad):
+
+```bash
+uv sync                                                    # once: the Python environment of pyproject.toml
+# the moving-boundary demo's recording (0.24 s per card, the left hand 0.12 s behind)
+uv run python tool/ik/gen_shuffle_motion.py --riffle-step 0.24 --release-lag 0.12 --out output/ik/mb
+# the physical-grip demo's recording
+uv run python tool/ik/gen_shuffle_motion.py \
+    --riffle-step 0.32 --release-lag 0.4 --packet-thick 0.65 --thumb-inset 0.45 --bow-dir card \
+    --bow-fingers 0 --bow-thumb 0.7 --riffle-lift 0.3 --direct-push --push-pause 0.5 --square-slack 1.6 \
+    --riffle-knuckle 30 --riffle-knuckle-from 25 --riffle-knuckle-frames 200 --riffle-knuckle-mode freeze \
+    --riffle-knuckle-press 1.0 400 --riffle-knuckle-press-from 45 --riffle-cut 85 --out output/ik/phys
+uv run python tool/bake_hand_shuffle.py --motion output/ik/phys/shuffle_motion.npz --out asset/hand_shuffle_phys
+```
+
+Each run takes about 2.5 minutes on the CPU. The physical-grip options, in order: the riffle's pace and the lag
+between the hands, the packet stacked at the cards' own thickness, the thumb target 4.5 mm over the packet's end
+face, the bow done by the thumb alone along the card axis, the thumb's 3 mm withdrawal during the slide, the push
+with no lift-off (a 0.5 s pause, stopping 16 mm short of the card's half length), the last knuckle opening 30
+degrees over 200 frames from frame 25 of the riffle with a 1 cm descent from frame 45, and the riffle cut after 85
+frames. `gen_shuffle_motion.py --help` documents every option; each was added for a measured effect on the cards.
 
 ## Documents
 
@@ -158,7 +188,8 @@ CMakeLists.txt CMakePresets.json cmake/   build system (presets: release, releas
 ext/        vendored HouGeoIO (bgeo I/O), cnpy, warp_svd; FetchContent for the rest
 src/        the solver: core, ccd, geometry, scene, gpu, fem, contact, linsys, solver, io
 app/        cs_run (headless), cs_view (viewer), config/ (the demo scenes)
-tool/       scene generators and analysis scripts (Python)
+tool/       scene generators and analysis scripts; ik/ (the motion generator), robot/ (the robot model loader),
+            render/ (the clip renderer's modules); pyproject.toml at the root declares their Python environment
 asset/      meshes and keyframes of the demos
 doc/        the math and implementation specifications, the acceleration guide, references
 ```

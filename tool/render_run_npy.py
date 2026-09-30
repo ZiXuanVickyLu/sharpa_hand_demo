@@ -11,7 +11,7 @@ coordinates) removes the COLLIDER triangles whose centroid satisfies it (a look 
 --every N renders every N-th saved frame."""
 import argparse, json, os, re, sys
 import numpy as np
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "render"))
+sys.path[:0] = [os.path.join(os.path.dirname(os.path.abspath(__file__)), d) for d in ("render", "robot")]
 os.environ.setdefault("EGL_DEVICE", "0")
 import render_triview as rt                      # noqa: E402  (headless EGL set up on import)
 from render_triview import look_at, read_frame_gl, disable_distance_fog   # noqa: E402

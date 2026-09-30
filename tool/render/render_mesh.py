@@ -19,7 +19,7 @@ import imageio.v2 as iio
 import numpy as np
 import warp as wp
 
-sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+sys.path[:0] = [os.path.dirname(os.path.realpath(__file__)), os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "robot")]
 from newton.viewer import ViewerGL  # noqa: E402
 from robot_scene import YamSharpaBench  # noqa: E402
 from scipy.ndimage import gaussian_filter  # noqa: E402
